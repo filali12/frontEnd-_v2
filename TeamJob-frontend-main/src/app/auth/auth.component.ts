@@ -95,6 +95,7 @@ passwordEntreprise: ['',
         //the back response is respondin but error in parseing it in data
         console.log(data);
         console.log("response received");
+        localStorage.setItem('isConnected', 'true');
         this._router.navigate(["/acceuil"])},
       error =>{
 
@@ -108,6 +109,7 @@ passwordEntreprise: ['',
     this._service.regiserUser(this.user).subscribe(
       data => {
         console.log("registration received");
+        localStorage.setItem('isConnected', 'true');
         this._router.navigate(["/acceuil"]);
       },
       error => {console.log(error) ;
@@ -126,6 +128,7 @@ passwordEntreprise: ['',
 
 this.EntrepriseService.LoginEntreprise(Email,Password).subscribe(
  ()=>{
+  localStorage.setItem('isConnected', 'true');
   this._router.navigateByUrl('/profil');
  }
 
@@ -156,6 +159,7 @@ this.EntrepriseService.LoginEntreprise(Email,Password).subscribe(
     this.EntrepriseService.RegisterEntreprise(this.entreprise).subscribe(
       ()=>
       {
+        localStorage.setItem('isConnected', 'true');
         this._router.navigateByUrl('/profil');
 
       }),
