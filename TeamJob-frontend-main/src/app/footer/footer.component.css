@@ -331,3 +331,32 @@ a:hover, a:focus {
 .card[data-color="orange"] .category {
     color: #e95e37;
 }
+.wrapper {
+  height: 15vh;
+  /*This part is important for centering*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typing-demo {
+  width: 1000px;
+  animation: typing 5s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px ;
+  font-family: monospace;
+  font-size: 28px;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  100% {
+    border-color: transparent
+  }
+}
